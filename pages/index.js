@@ -10,7 +10,7 @@ const Home = ({ products, bannerData }) => {
   return (
     <>
       
-      { /*<HeroBanner heroBanner = {bannerData.length && bannerData[0]}/> */}
+      <HeroBanner heroBanner = {bannerData.length && bannerData[0]}/> 
       
       <div className="products-heading">
         <h2>Featured Items</h2>
@@ -20,6 +20,14 @@ const Home = ({ products, bannerData }) => {
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
 
+      <div className="">
+        <button
+          type="button"
+          className="btn"
+          onClick="/Shop">
+            Shop All
+          </button>
+      </div>
       
     </>
   )
