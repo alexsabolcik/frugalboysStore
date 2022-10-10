@@ -10,13 +10,13 @@ const Navbar = () => {
     const { showCart, setShowCart, totalQuantities } = useStateContext();
     return (
         <div className="navbar-container">
-            <p>
+            <div>
                 <Link href="/">
                     <div className="">
                         <h3>FrugalBoys</h3>
                     </div>
                 </Link>
-            </p>
+            </div>
 
             <button type="button" className = "cart-icon" onClick={() => setShowCart(true)}>
                 <AiOutlineShopping />

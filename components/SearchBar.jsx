@@ -1,31 +1,27 @@
 import React, {useState} from "react";
 import { Product } from './';
 
-function SearchBar({placeholder, data}) {
+function SearchBar({placeholder, data, childChange}) {
     const [filteredData, setFilteredData] = useState(data);
 
-    const handleFilter = (event) => {
-        const searchWord = event.target.value;
-        const newFilter = data.filter((value) => {
-            return value.name.toLowerCase().includes(searchWord.toLowerCase())
-        });
-        setFilteredData(newFilter);
+    {/* handlefilter 
+        is called every time search bar contents are edited. will search through all products
+for any that titles match */}
+    // const handleFilter = (event) => {
+    //     const searchWord = event.target.value;
+    //     const newFilter = data.filter((value) => {
+    //         return value.name.toLowerCase().includes(searchWord.toLowerCase())
+    //     });
+    //     setFilteredData(newFilter);
 
-    };
+    // };
     return (
         <div>
-            <div className="inputs">
+            <div>
                 {/* possible lag here, might only want to call on enter key press*/}
-                <input type="text" placeholder={placeholder} onChange={handleFilter}/>
+                <input className="searchbar" type="text" placeholder={placeholder} onChange={childChange}/>
 
             </div>
-            <div className="results">
-
-                <div className="products-container">
-                    {filteredData?.map((product) => <Product key={product._id} product={product} />)}
-                </div>
-            </div>
-            
         </div>
     );
 }

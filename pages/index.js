@@ -5,6 +5,9 @@ import {client} from '../lib/client';
 import { Product, FooterBanner, HeroBanner }
 from '../components'
 
+import Link from 'next/link'
+
+
 
 const Home = ({ products, bannerData }) => {
   return (
@@ -17,16 +20,18 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       <div className="products-container">
-        {products?.map((product) => <Product key={product._id} product={product} />)}
+        {/* will just show first 6 products for now, could add featured prod check */}
+        {products?.slice(0, 6).map((product) => <Product key={product._id} product={product} />)}
       </div>
 
       <div className="">
+        <Link href="/Shop">
         <button
           type="button"
-          className="btn"
-          onClick="/Shop">
+          className="btn">
             Shop All
-          </button>
+        </button>
+        </Link>
       </div>
       
     </>
