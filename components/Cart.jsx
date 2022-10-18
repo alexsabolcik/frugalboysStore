@@ -8,6 +8,8 @@ import { useStateContext } from '../context/StateContext'
 import { urlFor } from '../lib/client'
 import getStripe from '../lib/getStripe'
 
+import {client} from '../lib/client'
+
 const Cart = () => {
     //cart reference
     const cartRef = useRef();
@@ -32,6 +34,8 @@ const Cart = () => {
     
         stripe.redirectToCheckout({ sessionId: data.id });
     }
+
+    
 
     return (
         <div className="cart-wrapper" ref = {cartRef}>

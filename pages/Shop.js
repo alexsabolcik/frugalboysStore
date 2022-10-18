@@ -52,7 +52,7 @@ for any that titles match */}
 
 //getting sanity products
 export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
+  const query = '*[_type == "product" && isSold == false]';
   const products = await client.fetch(query);
   return {
     props: { products }

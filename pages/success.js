@@ -4,15 +4,38 @@ import { BsBagCheckFill } from 'react-icons/bs';
 
 import { useStateContext } from '../context/StateContext';
 
+import {client} from '../lib/client';
+
 const Success = () => {
-  const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
+  const { cartItems, setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
   
+  
+  const tempHandle = async (items) => {
+    // const stripe = await getStripe();
+    console.log("cart items:")
+    console.log(items);
+    const response = await fetch('/api/sanity_remove', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(items),
+    });
+
+    if(response.statusCode === 500) return;
+
+    const data = await response.json();
+  }
   //this will run as soon as page is loaded
   useEffect(() => {
-    localStorage.clear();
-    setCartItems([]);
-    setTotalPrice(0);
-    setTotalQuantities(0);
+    const saveCartItems = cartItems;
+    console.log("cart items before async function");
+    console.log(saveCartItems);
+    tempHandle(saveCartItems);
+    //localStorage.clear();
+    //setCartItems([]);
+    //setTotalPrice(0);
+    //setTotalQuantities(0);
     
   }, []);
 
@@ -39,5 +62,7 @@ const Success = () => {
     </div>
   )
 }
+
+
 
 export default Success
