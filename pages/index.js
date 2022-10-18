@@ -24,7 +24,7 @@ const Home = ({ products, bannerData }) => {
         {products?.slice(0, 6).map((product) => <Product key={product._id} product={product} />)}
       </div>
 
-      <div className="">
+      <div className="shopall-btn-container">
         <Link href="/Shop">
         <button
           type="button"

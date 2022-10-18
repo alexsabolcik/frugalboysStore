@@ -38,6 +38,11 @@ a {
   width: 300px;
 }
 
+.shopall-btn-container{
+  display:flex;
+  justify-content: center;
+}
+
 /* **************************************
 *****************************************
 *************************************** */
@@ -394,15 +399,15 @@ padding: 30px 65px;
 }
 .btn{
   width: 100%;
-  max-width: 400px;
+  max-width: 250px;
   padding: 10px 12px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
   font-size: 20px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #324d67;
   color: #fff;
   cursor: pointer;
     transform: scale(1, 1);
