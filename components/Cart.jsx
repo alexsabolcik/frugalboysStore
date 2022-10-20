@@ -16,6 +16,8 @@ const Cart = () => {
     const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove} = useStateContext();
     
     const handleCheckout = async () => {
+        console.log("cart items before stripe: ");
+        console.log(cartItems);
         const stripe = await getStripe();
     
         const response = await fetch('/api/Stripe', {
@@ -31,6 +33,9 @@ const Cart = () => {
         const data = await response.json();
     
         toast.loading('Redirecting...');
+
+        console.log("data recieved");
+        console.log(data);
     
         stripe.redirectToCheckout({ sessionId: data.id });
     }

@@ -30,6 +30,7 @@ export default{
             name: 'price',
             title: 'Price',
             type: 'number',
+            //possibly need check for integer value
         },
         {
             name: 'details',

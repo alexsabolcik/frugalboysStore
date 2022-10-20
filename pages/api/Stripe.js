@@ -13,23 +13,24 @@ export default async function handler(req, res) {
         shipping_options: [
           { shipping_rate: 'shr_1LtOgLANAdl3ajwDjwSRhYWY' },
         ],
+        
         line_items: req.body.map((item) => {
-          const img = item.image[0].asset._ref;
-          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/7gtjrx8i/production/').replace('-webp', '.webp');
+          const result1 = item.price.toFixed(2);
+          const final = parseFloat(result1);
+          console.log("result1" + result1);
+          //const img = item.image[0].asset._ref;
+          //const newImage = img.replace('image-', 'https://cdn.sanity.io/images/7gtjrx8i/production/').replace('-webp', '.webp');
 
           return {
             price_data: { 
               currency: 'usd',
               product_data: { 
                 name: item.name,
-                images: [newImage],
+                //images: [newImage],
               },
-              unit_amount: item.price * 100,
+              unit_amount: final * 100,
             },
-            adjustable_quantity: {
-              enabled:true,
-              minimum: 1,
-            },
+            
             quantity: item.quantity
           }
         }),
