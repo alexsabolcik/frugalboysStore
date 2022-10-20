@@ -8,10 +8,10 @@ const Footer = () => {
         <div className = "footer-container">
 
             <p>2022 Frugalboys all rights reserved</p>
-            <p classname="icons">
-                <Link href="https://www.instagram.com/frugalboys">
-                    <AiFillInstagram />
-                </Link>
+            <p className="icons">
+                
+                    <AiFillInstagram href="https://www.instagram.com/frugalboys"/>
+                
             </p>
         </div>
     )

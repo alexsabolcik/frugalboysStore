@@ -43,6 +43,13 @@ a {
   justify-content: center;
 }
 
+.MayLike-container{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
 /* **************************************
 *****************************************
 *************************************** */

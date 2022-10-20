@@ -42,7 +42,7 @@ for any that titles match */}
       </div>
   
       <div className="products-container">
-        
+          {/* this could be split with a variable that increases every time show more is clicked */}
           {filteredData?.map((product) => <Product key={product._id} product={product} />)}
 
       </div>

@@ -12,6 +12,10 @@ const ProductDetails = ( {product, products}) => {
 
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd } = useStateContext();
+
+    //TODO split original array randomly after filter and then only display
+    //4-5 products
+    const filteredProds = products.filter(item => item.name != name);
     return (
         <div>
             <div className="product-detail-container">
@@ -48,22 +52,22 @@ const ProductDetails = ( {product, products}) => {
                         <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>
                             Add to Cart
                         </button>
-                        <button type="button" className="buy-now" onClick="">
+                        <button type="button" className="buy-now" >
                             Buy Now
                         </button>
                         
                     </div>
                 </div>
             </div>
-            <div className = "maylike-products-wrapper">
-                <h2>You may also like</h2>
-                <div className="marquee">
-                    <div className="maylike-products-container track">
-                        {products.map((item) => (
-                            <Product key={item._id} product={item}/>
-                        ))}
-                    </div>
-                </div>
+            <div className="MayLike-container">
+                <h1>You May Also Like:</h1>
+            </div>
+            <div className = "products-container">
+                
+                {filteredProds.map((item) => (
+                    <Product key={item._id} product={item}/>
+                ))}
+                    
             </div>
         </div>
     )
