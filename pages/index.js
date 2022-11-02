@@ -15,9 +15,9 @@ const Home = ({ products, bannerData }) => {
       
       <HeroBanner heroBanner = {bannerData.length && bannerData[0]}/> 
       
-      <div className="products-heading">
+      {/* <div className="products-heading">
         <h2>Featured Items</h2>
-      </div>
+      </div> */}
 
       <div className="products-container">
         {/* will just show first 6 products for now, could add featured prod check */}
