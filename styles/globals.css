@@ -47,16 +47,17 @@ position: fixed;
   transition: all .4s;
   height: 20vw;
   width: 200px;
-  background-color: gray;
+  background-color: rgb(193, 186, 186);
   float: left;
-  padding-left: 20px;
+  padding-left: 25px;
   padding-top: 10px;
   position: fixed;
-  line-height: 2;
+  line-height: 3.5;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  
+  opacity: .75;
+  border-radius: 0px 25px 25px 0px;
 }
 
 .menu-container ul{

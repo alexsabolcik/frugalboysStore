@@ -69,7 +69,7 @@ const Navbar = () => {
                             <li onClick={handleClick}>All Products</li>
                             </Link>
 
-                            <li>Cart</li>
+                            <li onClick={() => setShowCart(true)}>Cart</li>
 
                             <li onClick={handleClick}>Close</li>
                         </ul>
